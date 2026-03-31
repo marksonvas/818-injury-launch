@@ -96,7 +96,7 @@ const CaseForm = ({
         <input
           type="tel"
           name="phone"
-          placeholder="(818) 000-0000"
+          placeholder="(818) 650-9985"
           value={form.phone}
           onChange={handlePhoneChange}
           className={`${inputBase} ${errors.phone ? errorBorder : normalBorder}`}

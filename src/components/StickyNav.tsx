@@ -10,10 +10,10 @@ const StickyNav = () => {
             Serving the San Fernando Valley
           </span>
           <a
-            href="tel:8180000000"
+            href="tel:8186509985"
             className="inline-flex items-center bg-gold hover:bg-gold-dark text-white font-body font-semibold text-sm px-5 py-2.5 rounded-full transition-colors min-h-[44px]"
           >
-            Call Now: (818) 000-0000
+            Call Now: (818) 650-9985
           </a>
         </div>
       </div>
