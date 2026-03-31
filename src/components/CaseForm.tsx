@@ -140,7 +140,7 @@ const CaseForm = ({
         Send My Case Details →
       </button>
 
-      <p className="text-gray-400 text-[10px] text-center">
+      <p className="text-gray-400 text-[12px] text-center">
         Your info is 100% private. We never share it.
       </p>
     </form>

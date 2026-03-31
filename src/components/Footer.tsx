@@ -9,7 +9,7 @@ const Footer = () => (
           <a
             key={link}
             href="#"
-            className="text-gray-500 text-[11px] hover:text-gray-400 transition-colors"
+            className="text-gray-500 text-[12px] hover:text-gray-400 transition-colors"
           >
             {link}
           </a>

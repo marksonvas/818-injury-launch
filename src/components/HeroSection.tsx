@@ -34,7 +34,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {["No fee unless you win", "Free case review", "Available 24/7"].map((item) => (
-              <span key={item} className="flex items-center gap-2 text-slate-brand text-xs">
+              <span key={item} className="flex items-center gap-2 text-slate-brand text-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
                 {item}
               </span>

@@ -26,7 +26,7 @@ const Testimonials = () => (
         {stats.map((s) => (
           <div key={s.label}>
             <p className="font-display text-white text-2xl md:text-[30px]">{s.value}</p>
-            <p className="text-slate-brand text-[11px] mt-1 uppercase tracking-wider">{s.label}</p>
+            <p className="text-slate-brand text-[13px] mt-1 uppercase tracking-wider">{s.label}</p>
           </div>
         ))}
       </div>

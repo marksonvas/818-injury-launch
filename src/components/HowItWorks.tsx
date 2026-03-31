@@ -40,8 +40,8 @@ const HowItWorks = () => (
               {s.num}
             </div>
             <div>
-              <p className="font-body font-semibold text-sm text-foreground">{s.title}</p>
-              <p className="text-gray-500 text-xs mt-1 leading-relaxed">{s.desc}</p>
+              <p className="font-body font-semibold text-[16px] text-foreground">{s.title}</p>
+              <p className="text-gray-500 text-[14px] mt-1 leading-relaxed">{s.desc}</p>
             </div>
           </div>
         ))}
