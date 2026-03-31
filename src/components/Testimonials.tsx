@@ -15,7 +15,7 @@ const Testimonials = () => (
           <span key={i}>★</span>
         ))}
       </div>
-      <blockquote className="font-display italic text-white text-lg md:text-xl leading-relaxed mb-4">
+      <blockquote className="font-display italic text-white text-lg md:text-[22px] leading-relaxed mb-4">
         "After my accident on the 101, I didn't know where to turn. They guided me through
         everything. I never had to fight the insurance company alone — and my settlement was
         three times what they first offered."
