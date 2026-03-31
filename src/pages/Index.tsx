@@ -16,15 +16,12 @@ const Index = () => (
       <HowItWorks />
 
       {/* Mobile-only contact form */}
-      <div id="contact-form" className="md:hidden px-4 py-12 bg-white">
+      <div className="md:hidden px-4 py-12 bg-white" id="contact-form">
         <CaseForm
           title="Get Your Free Case Review"
           subtitle="Free, confidential — no obligation"
         />
       </div>
-
-      {/* Desktop anchor for contact-form scroll */}
-      <div id="contact-form" className="hidden md:block" aria-hidden="true" />
 
       <Testimonials />
       <UrgencyCta />
