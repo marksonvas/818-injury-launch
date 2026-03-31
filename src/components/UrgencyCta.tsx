@@ -8,10 +8,10 @@ const UrgencyCta = () => (
         California's statute of limitations gives you limited time to file. Get your free case review now.
       </p>
       <a
-        href="tel:8180000000"
+        href="tel:8186509985"
         className="block font-display font-semibold text-white text-[44px] mb-6 hover:underline"
       >
-        (818) 000-0000
+        (818) 650-9985
       </a>
       <a
         href="#contact-form"

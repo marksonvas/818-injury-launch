@@ -25,10 +25,10 @@ const HeroSection = () => {
               Get a Free Consultation
             </a>
             <a
-              href="tel:8180000000"
+              href="tel:8186509985"
               className="inline-flex items-center justify-center border border-white text-white font-body font-semibold text-sm px-6 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200 min-h-[44px]"
             >
-              Call (818) 000-0000
+              Call (818) 650-9985
             </a>
           </div>
 
