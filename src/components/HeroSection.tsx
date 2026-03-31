@@ -43,8 +43,10 @@ const HeroSection = () => {
         </div>
 
         {/* Right Column — Desktop Form */}
-        <div className="hidden md:block md:w-[40%] w-full">
-          <CaseForm />
+        <div className="hidden md:block md:w-[40%] w-full" id="contact-form-desktop">
+          <div id="contact-form">
+            <CaseForm />
+          </div>
         </div>
       </div>
     </section>
