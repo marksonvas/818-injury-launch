@@ -9,7 +9,7 @@ const UrgencyCta = () => (
       </p>
       <a
         href="tel:8180000000"
-        className="block font-display text-white text-3xl md:text-4xl mb-6 hover:underline"
+        className="block font-display font-semibold text-white text-[44px] mb-6 hover:underline"
       >
         (818) 000-0000
       </a>
