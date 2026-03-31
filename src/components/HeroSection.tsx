@@ -12,7 +12,7 @@ const HeroSection = () => {
           <h1 className="font-display text-white text-[28px] md:text-[36px] leading-tight mb-4">
             You Were Hurt. You Deserve Help.
           </h1>
-          <p className="text-slate-brand text-[15px] max-w-[420px] mb-8 leading-relaxed">
+          <p className="text-slate-brand text-[17px] max-w-[420px] mb-8 leading-relaxed">
             If you or someone you love was injured in a car accident or lost a loved one, 
             we're here to listen — and fight for what you're owed. No fees unless you win.
           </p>
