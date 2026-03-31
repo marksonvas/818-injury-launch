@@ -40,6 +40,7 @@ const HeroSection = () => {
               </span>
             ))}
           </div>
+          <div className="w-[60px] h-px bg-gold mt-8" />
         </div>
 
         {/* Right Column — Desktop Form */}
