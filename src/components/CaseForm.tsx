@@ -66,7 +66,7 @@ const CaseForm = ({
   }
 
   const inputBase =
-    "w-full px-3 py-2.5 rounded-lg border text-sm font-body min-h-[44px] focus:outline-none focus:ring-2 focus:ring-gold transition-colors";
+    "w-full px-3 py-2.5 rounded-lg border text-[15px] font-body min-h-[44px] focus:outline-none focus:ring-2 focus:ring-gold transition-colors";
   const errorBorder = "border-red-500";
   const normalBorder = "border-gray-200";
 
