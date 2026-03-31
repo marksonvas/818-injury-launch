@@ -65,8 +65,8 @@ const PracticeAreas = () => (
             className="bg-white border border-gray-100 rounded-xl p-6"
           >
             <div className="mb-3.5">{c.icon}</div>
-            <h3 className="font-display text-[16px] text-navy mb-2">{c.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{c.body}</p>
+            <h3 className="font-display text-[18px] text-navy mb-2">{c.title}</h3>
+            <p className="text-muted-foreground text-[14px] leading-relaxed">{c.body}</p>
           </div>
         ))}
       </div>

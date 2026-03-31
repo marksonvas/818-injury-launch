@@ -15,7 +15,7 @@ const Testimonials = () => (
           <span key={i}>★</span>
         ))}
       </div>
-      <blockquote className="font-display italic text-white text-lg md:text-xl leading-relaxed mb-4">
+      <blockquote className="font-display italic text-white text-lg md:text-[22px] leading-relaxed mb-4">
         "After my accident on the 101, I didn't know where to turn. They guided me through
         everything. I never had to fight the insurance company alone — and my settlement was
         three times what they first offered."
@@ -26,7 +26,7 @@ const Testimonials = () => (
         {stats.map((s) => (
           <div key={s.label}>
             <p className="font-display text-white text-2xl md:text-[30px]">{s.value}</p>
-            <p className="text-slate-brand text-[11px] mt-1 uppercase tracking-wider">{s.label}</p>
+            <p className="text-slate-brand text-[13px] mt-1 uppercase tracking-wider">{s.label}</p>
           </div>
         ))}
       </div>

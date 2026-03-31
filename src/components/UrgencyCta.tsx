@@ -4,7 +4,7 @@ const UrgencyCta = () => (
       <h2 className="font-display text-white text-xl md:text-2xl mb-3">
         Don't wait. Evidence disappears. Deadlines are real.
       </h2>
-      <p className="text-white/85 text-sm mb-6">
+      <p className="text-white/85 text-[16px] mb-6">
         California's statute of limitations gives you limited time to file. Get your free case review now.
       </p>
       <a
