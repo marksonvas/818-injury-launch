@@ -73,7 +73,7 @@ const CaseForm = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-xl shadow-lg p-6 space-y-4"
+      className="bg-white rounded-xl shadow-lg p-6 space-y-4 border-l-4 border-l-gold"
     >
       <div>
         <h3 className="font-display text-navy text-lg">{title}</h3>

@@ -20,13 +20,13 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
             <a
               href="#contact-form"
-              className="inline-flex items-center justify-center bg-gold hover:bg-gold-dark text-white font-body font-semibold text-sm px-6 py-3 rounded-lg transition-colors min-h-[44px]"
+              className="inline-flex items-center justify-center bg-gold hover:bg-gold-dark text-white font-body font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200 min-h-[44px]"
             >
               Get a Free Consultation
             </a>
             <a
               href="tel:8180000000"
-              className="inline-flex items-center justify-center border border-white text-white font-body font-semibold text-sm px-6 py-3 rounded-lg hover:bg-white/10 transition-colors min-h-[44px]"
+              className="inline-flex items-center justify-center border border-white text-white font-body font-semibold text-sm px-6 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200 min-h-[44px]"
             >
               Call (818) 000-0000
             </a>
@@ -40,6 +40,7 @@ const HeroSection = () => {
               </span>
             ))}
           </div>
+          <div className="w-[60px] h-px bg-gold mt-8" />
         </div>
 
         {/* Right Column — Desktop Form */}

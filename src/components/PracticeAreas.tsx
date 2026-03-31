@@ -62,9 +62,9 @@ const PracticeAreas = () => (
         {cards.map((c) => (
           <div
             key={c.title}
-            className="bg-white border border-gray-100 rounded-xl p-5"
+            className="bg-white border border-gray-100 rounded-xl p-6"
           >
-            <div className="mb-3">{c.icon}</div>
+            <div className="mb-3.5">{c.icon}</div>
             <h3 className="font-display text-[16px] text-navy mb-2">{c.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{c.body}</p>
           </div>
