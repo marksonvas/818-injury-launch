@@ -77,7 +77,7 @@ const CaseForm = ({
     >
       <div>
         <h3 className="font-display text-navy text-lg">{title}</h3>
-        <p className="text-gray-500 text-xs mt-0.5">{subtitle}</p>
+        <p className="text-gray-500 text-[13px] mt-0.5">{subtitle}</p>
       </div>
 
       <div>
