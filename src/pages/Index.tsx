@@ -4,6 +4,7 @@ import PracticeAreas from "@/components/PracticeAreas";
 import HowItWorks from "@/components/HowItWorks";
 import CaseForm from "@/components/CaseForm";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import UrgencyCta from "@/components/UrgencyCta";
 import Footer from "@/components/Footer";
 
