@@ -8,6 +8,9 @@ const formatPhone = (value: string) => {
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 };
 
+// Web3Forms public access key (delivers to intake@818injury.com)
+const WEB3FORMS_KEY = "9bd3f4a1-436c-40ac-b866-f04fe81b8fdd";
+
 interface CaseFormProps {
   title?: string;
   subtitle?: string;
@@ -18,6 +21,8 @@ const CaseForm = ({
   subtitle = "Free, confidential — no obligation",
 }: CaseFormProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
     name: "",
@@ -38,7 +43,7 @@ const CaseForm = ({
     setErrors((e2) => ({ ...e2, [e.target.name]: false }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, boolean> = {};
     if (!form.name.trim()) newErrors.name = true;
@@ -51,8 +56,42 @@ const CaseForm = ({
       return;
     }
 
-    console.log("Form submitted:", form);
-    setSubmitted(true);
+    const honeypot = (e.currentTarget as HTMLFormElement).elements.namedItem("botcheck") as HTMLInputElement | null;
+    if (honeypot?.checked) return;
+
+    const injuryLabels: Record<string, string> = {
+      car: "Car accident",
+      "wrongful-death": "Wrongful death",
+      truck: "Truck accident",
+      rideshare: "Rideshare accident",
+      other: "Other",
+    };
+    const injury = injuryLabels[form.injuryType] || form.injuryType;
+
+    setSending(true);
+    setSendError(false);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Lead: ${injury} – ${form.name.trim().slice(0, 100)}`,
+          from_name: "818Injury.com",
+          name: form.name.trim().slice(0, 100),
+          phone: form.phone,
+          injury_type: injury,
+          description: form.description.trim().slice(0, 2000),
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error("failed");
+      setSubmitted(true);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -133,11 +172,20 @@ const CaseForm = ({
         {errors.description && <p className="text-red-500 text-xs mt-1">Description is required</p>}
       </div>
 
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+
+      {sendError && (
+        <p className="text-red-500 text-[13px] text-center">
+          Something went wrong. Please call us at (818) 650-9985.
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full bg-navy text-white font-body font-semibold text-sm py-3 rounded-lg hover:bg-navy-light transition-colors min-h-[44px]"
+        disabled={sending}
+        className="w-full bg-navy text-white font-body font-semibold text-sm py-3 rounded-lg hover:bg-navy-light transition-colors min-h-[44px] disabled:opacity-70"
       >
-        Send My Case Details →
+        {sending ? "Sending…" : "Send My Case Details →"}
       </button>
 
       <p className="text-gray-400 text-[12px] text-center">
