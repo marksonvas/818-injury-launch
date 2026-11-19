@@ -11,6 +11,10 @@ const formatPhone = (value: string) => {
 // Web3Forms public access key (delivers to intake@818injury.com)
 const WEB3FORMS_KEY = "9bd3f4a1-436c-40ac-b866-f04fe81b8fdd";
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+export const isValidEmail = (value: string) => EMAIL_PATTERN.test(value.trim());
+
 interface CaseFormProps {
   title?: string;
   subtitle?: string;
@@ -27,6 +31,7 @@ const CaseForm = ({
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    email: "",
     injuryType: "",
     description: "",
   });
@@ -48,6 +53,7 @@ const CaseForm = ({
     const newErrors: Record<string, boolean> = {};
     if (!form.name.trim()) newErrors.name = true;
     if (form.phone.replace(/\D/g, "").length < 10) newErrors.phone = true;
+    if (form.email.trim() && !isValidEmail(form.email)) newErrors.email = true;
     if (!form.injuryType) newErrors.injuryType = true;
     if (!form.description.trim()) newErrors.description = true;
 
@@ -80,6 +86,7 @@ const CaseForm = ({
           from_name: "818Injury.com",
           name: form.name.trim().slice(0, 100),
           phone: form.phone,
+          ...(form.email.trim() ? { email: form.email.trim().slice(0, 150) } : {}),
           injury_type: injury,
           description: form.description.trim().slice(0, 2000),
         }),
@@ -141,6 +148,18 @@ const CaseForm = ({
           className={`${inputBase} ${errors.phone ? errorBorder : normalBorder}`}
         />
         {errors.phone && <p className="text-red-500 text-xs mt-1">Valid phone number is required</p>}
+      </div>
+
+      <div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email (optional)"
+          value={form.email}
+          onChange={handleChange}
+          className={`${inputBase} ${errors.email ? errorBorder : normalBorder} ${!form.email ? "placeholder:text-gray-400" : ""}`}
+        />
+        {errors.email && <p className="text-red-500 text-xs mt-1">Please enter a valid email address</p>}
       </div>
 
       <div>
